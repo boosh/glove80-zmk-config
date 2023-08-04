@@ -156,7 +156,7 @@
        &trans    &trans          &trans          &trans       &trans      &trans                                                                &trans     &trans                &trans                &trans               &trans                   &trans
        &trans    &kp F1          &kp F2          &kp F3       &kp F4      &kp F5                                                                &kp F6     &kp F7                &kp F8                &kp F9               &kp F10                  &kp F11
        &trans    &hm LSHIFT F11  &hm LCTRL F12   &kp LALT     &kp ESCAPE  &kp DEL                                                               &none      &hm RGUI LEFT_ARROW   &hm LALT DOWN_ARROW   &hm RCTRL UP_ARROW   &hm RSHIFT RIGHT_ARROW   &kp F12
-       &trans    &kp LG(Z)       &kp LG(X)       &kp LG(C)    &kp LG(V)   &kp LG(B)   &trans   &trans  &trans        &trans  &trans  &trans     &kp CAPS   &kp HOME              &kp PGDN              &kp PGUP             &kp END                  &trans
+       &trans    &kp LG(Z)       &kp LG(X)       &kp LG(C)    &kp LG(V)   &kp LG(B)   &trans   &trans  &trans        &trans  &trans  &trans     &kp CAPS   &kp HOME              &kp PG_DN             &kp PG_UP            &kp END                  &trans
        &trans    &trans          &trans          &trans       &trans                  &trans   &trans  &trans        &trans  &trans  &trans                &trans                &trans                &trans               &trans                   &trans
             >;
         };
