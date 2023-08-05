@@ -45,8 +45,6 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-
-
     };
 };
 
@@ -118,6 +116,18 @@
 
 };
 
+/ {
+    combos {
+        compatible = "zmk,combos";
+        /* Caps word when pressing the keys in the position of Z & X on the QWERTY keymap simultaneously */
+        combo_caps_word {
+            timeout-ms = <50>;
+            key-positions = <47 48>;
+            layers = <QWERTY COLEMAK>;
+            bindings = <&caps_word>;
+        };
+    };
+};
 
 / {
     keymap {
