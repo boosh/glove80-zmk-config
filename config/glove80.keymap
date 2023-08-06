@@ -117,6 +117,15 @@
 / {
     combos {
         compatible = "zmk,combos";
+
+        /* ESC when pressing keys in the position of Q & W on the QWERTY keymap simultaneously */
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <23 24>;
+            layers = <QWERTY COLEMAK>;
+            bindings = <&kp ESC>;
+        };
+
         /* Caps word when pressing the keys in the position of Z & X on the QWERTY keymap simultaneously */
         combo_caps_word {
             timeout-ms = <50>;
@@ -177,12 +186,12 @@
 
         layer_NUMPAD {
             bindings = <
-       &trans    &trans       &trans        &trans         &trans                                                                                       &trans       &trans        &trans        &trans         &trans
-       &trans    &trans       &trans        &trans         &trans         &trans                                                               &trans   &trans       &kp FSLH      &kp ASTERISK  &trans         &trans
-       &trans    &to QWERTY   &to COLEMAK   &kp C_BRI_DN   &kp C_BRI_UP   &none                                                                &kp F4   &kp KP_N7    &kp KP_N8     &kp KP_N9     &kp KP_MINUS   &trans
-       &trans    &none        &none         &kp LG(R)      &kp LG(F)      &none                                                                &kp F2   &kp KP_N4    &kp KP_N5     &kp KP_N6     &kp KP_PLUS    &trans
-       &trans    &kp C_PP     &kp C_NEXT    &kp C_VOL_DN   &kp C_VOL_UP   &trans    &trans   &trans   &trans       &trans  &trans  &trans      &none    &kp KP_N1    &kp KP_N2     &kp KP_N3     &kp KP_DOT     &trans
-       &trans    &trans       &trans        &trans         &trans                   &trans   &trans   &trans       &trans  &trans  &kp KP_N0            &trans       &trans        &trans        &trans         &trans
+       &trans    &trans       &trans        &trans         &trans                                                                                             &trans       &trans        &trans        &trans         &trans
+       &trans    &trans       &trans        &trans         &trans         &trans                                                                     &trans   &trans       &kp FSLH      &kp ASTERISK  &trans         &trans
+       &trans    &to QWERTY   &to COLEMAK   &kp C_BRI_DN   &kp C_BRI_UP   &none                                                                      &kp F4   &kp KP_N7    &kp KP_N8     &kp KP_N9     &kp KP_MINUS   &trans
+       &trans    &none        &none         &kp LG(R)      &kp LG(F)      &none                                                                      &kp F2   &kp KP_N4    &kp KP_N5     &kp KP_N6     &kp KP_PLUS    &trans
+       &trans    &kp C_PP     &kp C_NEXT    &kp C_VOL_DN   &kp C_VOL_UP   &kp LS(LG(V))   &trans   &trans   &trans       &trans  &trans  &trans      &none    &kp KP_N1    &kp KP_N2     &kp KP_N3     &kp KP_DOT     &trans
+       &trans    &trans       &trans        &trans         &trans                         &trans   &trans   &trans       &trans  &trans  &kp KP_N0            &trans       &trans        &trans        &trans         &trans
             >;
         };
 
