@@ -16,11 +16,12 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define QWERTY 0
-#define COLEMAK 1
-#define SYMBOLS 2
-#define NAV 3
-#define NUMPAD 4
-#define MAGIC 5
+#define QWERTY_SHIFT_LEFT 1
+#define COLEMAK 2
+#define SYMBOLS 3
+#define NAV 4
+#define NUMPAD 5
+#define MAGIC 6
 
 / {
     behaviors {
@@ -119,7 +120,7 @@
     combos {
         compatible = "zmk,combos";
 
-        /* ESC when pressing keys in the position of Q & W on the QWERTY keymap simultaneously */
+        /* ESC when pressing keys in the position of Q & W on the QWERTY & COLEMAK keymaps simultaneously */
         combo_esc {
             timeout-ms = <50>;
             key-positions = <23 24>;
@@ -127,12 +128,20 @@
             bindings = <&kp ESC>;
         };
 
-        /* Caps word when pressing the keys in the position of Z & X on the QWERTY keymap simultaneously */
+        /* Caps word when pressing the keys in the position of Z & X on the QWERTY & COLEMAK keymaps simultaneously */
         combo_caps_word {
             timeout-ms = <50>;
             key-positions = <47 48>;
             layers = <QWERTY COLEMAK>;
             bindings = <&caps_word>;
+        };
+
+        /* QWERTY shift left when pressing the keys in the enter & space keys simultaneously */
+        combo_qwerty_shift_left {
+            timeout-ms = <50>;
+            key-positions = <73 74>;
+            layers = <QWERTY>;
+            bindings = <&sl QWERTY_SHIFT_LEFT>;
         };
     };
 };
@@ -149,6 +158,18 @@
    &kp ESC              &hm LSHIFT A   &hm LCTRL S   &hm LALT D   &hm LGUI F   &hm LGUI G                                                                                                            &hm RGUI H   &hm RGUI J   &hm LALT K   &hm RCTRL L   &hm RSHIFT SEMI   &kp SQT
    &kp GRAVE            &kp Z          &kp X         &kp C        &kp V        &kp B        &kp_tog LSHFT NAV   &kp_tog LCTRL NUMPAD   &kp LGUI       &kp LGUI   &kp RCTRL  &kp_tog RSHFT SYMBOLS    &kp N        &kp M        &kp COMMA    &kp DOT       &kp FSLH          &kp PG_UP
    &magic MAGIC QWERTY  &kp HOME       &kp END       &kp LEFT     &kp RIGHT                 &lt NAV BSPC        &lt NUMPAD TAB         &kp LALT       &kp RALT   &kp RET    &lt SYMBOLS SPACE                     &kp UP       &kp DOWN     &kp LBKT      &kp RBKT          &kp PG_DN
+            >;
+        };
+
+        /* Shift the column to the right of the LHS index finger onto the index finger column to avoid having to stretch */
+        layer_QWERTY_SHIFT_LEFT {
+            bindings = <
+       &none   &none   &none   &none   &none                                                                          &none   &none   &none   &none   &none
+       &none   &none   &none   &none   &kp N5  &none                                                          &none   &none   &none   &none   &none   &none
+       &none   &none   &none   &none   &kp T   &none                                                          &none   &none   &none   &none   &none   &none
+       &none   &none   &none   &none   &kp G   &none                                                          &none   &none   &none   &none   &none   &none
+       &none   &none   &none   &none   &kp B   &none   &none   &none   &none          &none   &none   &none   &none   &none   &none   &none   &none   &none
+       &none   &none   &none   &none   &none           &none   &none   &none          &none   &none   &none           &none   &none   &none   &none   &none
             >;
         };
 
