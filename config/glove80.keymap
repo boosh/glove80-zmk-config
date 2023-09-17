@@ -23,13 +23,17 @@
 #define NUMPAD 5
 #define MAGIC 6
 
+&lt {
+    quick-tap-ms = <200>;
+};
+
 / {
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <180>;
             quick-tap-ms = <100>;
             global-quick-tap;
             flavor = "tap-preferred";
@@ -42,14 +46,10 @@
             label = "kp_tog";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <180>;
             bindings = <&kp>, <&tog>;
         };
     };
-};
-
-&lt {
-    quick-tap-ms = <200>;
 };
 
 / {
