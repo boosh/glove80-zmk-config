@@ -32,8 +32,9 @@ To locate your firmware files and reflash your Glove80...
 3. Select the desired workflow run in the centre area of the page (based on date and time of the build you wish to use). You can also start a new build from this page by clicking the "Run workflow" button.
 4. After clicking the desired workflow run, you should be presented with a section at the bottom of the page called "Artifacts". This section contains the results of your build, in a file called "glove80.uf2"
 5. Download the glove80.uf2
-6. Flash the firmware by connecting via USB then:
-  1. Pressing Magic + Esc for the left half
-  2. Pressing Magic + ‘ for the right half
+6. Flash the firmware by connecting via USB, turning off then back on while holding:
+  1. Pressing Magic + E for the left half
+  2. Pressing PgDn + I for the right half
+7. Then drag the firmware onto each half in the Finder
 
 Your keyboard is now ready to use.
