@@ -133,7 +133,7 @@
             timeout-ms = <50>;
             key-positions = <59 60>;
             layers = <QWERTY COLEMAK>;
-            bindings = <&kp NUM>;
+            bindings = <&kp KP_NUM>;
         };
 
         /* Caps word when pressing the keys in the position of Z & X on the QWERTY & COLEMAK keymaps simultaneously */
