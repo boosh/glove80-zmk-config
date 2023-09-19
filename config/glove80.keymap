@@ -128,6 +128,14 @@
             bindings = <&kp ESC>;
         };
 
+        /* NUMLOCK when pressing keys in the position of M & comma on the QWERTY & COLEMAK keymaps simultaneously */
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <59 60>;
+            layers = <QWERTY COLEMAK>;
+            bindings = <&kp NUM>;
+        };
+
         /* Caps word when pressing the keys in the position of Z & X on the QWERTY & COLEMAK keymaps simultaneously */
         combo_caps_word {
             timeout-ms = <50>;
@@ -136,7 +144,15 @@
             bindings = <&caps_word>;
         };
 
-        /* QWERTY shift left when pressing right thumb keys simultaneously */
+        /* Caps lock when pressing the keys in the position of C & V on the QWERTY & COLEMAK keymaps simultaneously */
+        combo_caps_lock {
+            timeout-ms = <50>;
+            key-positions = <49 50>;
+            layers = <QWERTY COLEMAK>;
+            bindings = <&kp CAPS>;
+        };
+
+        /* QWERTY shift left when pressing right thumb keys simultaneously (QWERTY layer only) */
         combo_qwerty_shift_left {
             timeout-ms = <50>;
             key-positions = <57 74>;
