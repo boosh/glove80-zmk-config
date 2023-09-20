@@ -129,11 +129,19 @@
         };
 
         /* NUMLOCK when pressing keys in the position of M & comma on the QWERTY & COLEMAK keymaps simultaneously */
-        combo_esc {
+        combo_numlock {
             timeout-ms = <50>;
             key-positions = <59 60>;
             layers = <QWERTY COLEMAK>;
             bindings = <&kp KP_NUM>;
+        };
+
+        /* INSERT when pressing keys in the position of U & I on the QWERTY & COLEMAK keymaps simultaneously */
+        combo_insert {
+            timeout-ms = <50>;
+            key-positions = <59 60>;
+            layers = <QWERTY COLEMAK>;
+            bindings = <&kp INSERT>;
         };
 
         /* Caps word when pressing the keys in the position of Z & X on the QWERTY & COLEMAK keymaps simultaneously */
