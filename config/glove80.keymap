@@ -209,9 +209,9 @@
             bindings = <
        &none   &none    &none    &none    &none                                                                                    &none    &none    &none    &none    &none
        &none   &trans   &trans   &trans   &kp N5    &trans                                                                &trans   &trans    &trans   &trans   &trans   &none
-       &none   &trans   &trans   &trans   &qh R T   &trans                                                                &trans   &qh U Y   &trans   &trans   &trans   &none
-       &none   &trans   &trans   &trans   &qh F G   &trans                                                                &trans   &qh J H   &trans   &trans   &trans   &none
-       &none   &trans   &trans   &trans   &qh V B   &trans   &trans   &trans   &trans          &trans   &trans   &trans   &trans   &qh M N   &trans   &trans   &trans   &none
+       &none   &trans   &trans   &trans   &qh T R   &trans                                                                &trans   &qh Y U   &trans   &trans   &trans   &none
+       &none   &trans   &trans   &trans   &qh G F   &trans                                                                &trans   &qh H J   &trans   &trans   &trans   &none
+       &none   &trans   &trans   &trans   &qh B V   &trans   &trans   &trans   &trans          &trans   &trans   &trans   &trans   &qh N M   &trans   &trans   &trans   &none
        &none   &none    &none    &none    &none              &trans   &trans   &trans          &trans   &trans   &trans            &none     &none    &none    &none    &none
             >;
         };
@@ -220,9 +220,9 @@
             bindings = <
    &kp F1                 &kp F2         &kp F3        &kp F4      &kp F5                                                                                       &kp F6       &kp F7       &kp F8       &kp F9         &kp F10
    &kp EQUAL              &kp N1         &kp N2        &kp N3      &kp N4      &kp N5                                                              &kp N6       &kp N7       &kp N8       &kp N9       &kp N0         &kp MINUS
-   &kp TAB                &kp Q          &kp W         &kp F       &qh P B     &kp B                                                               &kp J        &qh L J      &kp U        &kp Y        &kp SEMI       &kp BSLH
+   &kp TAB                &kp Q          &kp W         &kp F       &qh B P     &kp B                                                               &kp J        &qh J L      &kp U        &kp Y        &kp SEMI       &kp BSLH
    &kp ESC                &hm LSHIFT A   &hm LCTRL R   &hm LALT S  &hm LGUI T  &hm LGUI G                                                          &hm RGUI M   &hm RGUI N   &hm LALT E   &hm RCTRL I  &hm RSHIFT O   &kp SQT
-   &kp GRAVE              &kp Z          &kp X         &kp C       &qh D V     &kp V       &trans  &trans  &trans       &trans  &trans  &trans     &kp K        &qh H K      &kp COMMA    &kp DOT      &kp FSLH       &kp PG_UP
+   &kp GRAVE              &kp Z          &kp X         &kp C       &qh V D     &kp V       &trans  &trans  &trans       &trans  &trans  &trans     &kp K        &qh K H      &kp COMMA    &kp DOT      &kp FSLH       &kp PG_UP
    &magic MAGIC COLEMAK   &kp HOME       &kp END       &kp LEFT    &kp RIGHT               &trans  &trans  &trans       &trans  &trans  &trans                  &kp UP       &kp DOWN     &kp LBKT     &kp RBKT       &kp PG_DN
             >;
         };
@@ -232,9 +232,9 @@
             bindings = <
        &none   &none    &none    &none    &none                                                                                    &none    &none    &none    &none    &none
        &none   &trans   &trans   &trans   &kp N5    &trans                                                                &trans   &trans    &trans   &trans   &trans   &none
-       &none   &trans   &trans   &trans   &qh P B   &trans                                                                &trans   &qh L J   &trans   &trans   &trans   &none
-       &none   &trans   &trans   &trans   &qh T G   &trans                                                                &trans   &qh N M   &trans   &trans   &trans   &none
-       &none   &trans   &trans   &trans   &qh D V   &trans   &trans   &trans   &trans          &trans   &trans   &trans   &trans   &qh H K   &trans   &trans   &trans   &none
+       &none   &trans   &trans   &trans   &qh B P   &trans                                                                &trans   &qh J L   &trans   &trans   &trans   &none
+       &none   &trans   &trans   &trans   &qh G T   &trans                                                                &trans   &qh M N   &trans   &trans   &trans   &none
+       &none   &trans   &trans   &trans   &qh V D   &trans   &trans   &trans   &trans          &trans   &trans   &trans   &trans   &qh K H   &trans   &trans   &trans   &none
        &none   &none    &none    &none    &none              &trans   &trans   &trans          &trans   &trans   &trans            &none     &none    &none    &none    &none
             >;
         };
