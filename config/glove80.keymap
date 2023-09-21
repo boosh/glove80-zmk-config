@@ -18,10 +18,11 @@
 #define QWERTY 0
 #define QWERTY_SHIFT_LEFT 1
 #define COLEMAK 2
-#define SYMBOLS 3
-#define NAV 4
-#define NUMPAD 5
-#define MAGIC 6
+#define COLEMAK_SHIFT_LEFT 3
+#define SYMBOLS 4
+#define NAV 5
+#define NUMPAD 6
+#define MAGIC 7
 
 &lt {
     quick-tap-ms = <200>;
@@ -36,6 +37,16 @@
             tapping-term-ms = <180>;
             quick-tap-ms = <100>;
             global-quick-tap;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+
+        /* Tap and hold with a short duration for normal keys */
+        qh: quick_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "QUICK_HOLD";
+            #binding-cells = <2>;
+            tapping-term-ms = <140>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -120,7 +131,7 @@
     combos {
         compatible = "zmk,combos";
 
-        /* ESC when pressing keys in the position of Q & W on the QWERTY & COLEMAK keymaps simultaneously */
+        /* ESC when pressing keys in the position of Q & W on the QWERTY keymap simultaneously */
         combo_esc {
             timeout-ms = <50>;
             key-positions = <23 24>;
@@ -128,7 +139,7 @@
             bindings = <&kp ESC>;
         };
 
-        /* NUMLOCK when pressing keys in the position of M & comma on the QWERTY & COLEMAK keymaps simultaneously */
+        /* NUMLOCK when pressing keys in the position of M & comma on the QWERTY keymap simultaneously */
         combo_numlock {
             timeout-ms = <50>;
             key-positions = <59 60>;
@@ -136,7 +147,7 @@
             bindings = <&kp KP_NUM>;
         };
 
-        /* INSERT when pressing keys in the position of U & I on the QWERTY & COLEMAK keymaps simultaneously */
+        /* INSERT when pressing keys in the position of U & I on the QWERTY keymap simultaneously */
         combo_insert {
             timeout-ms = <50>;
             key-positions = <59 60>;
@@ -144,7 +155,7 @@
             bindings = <&kp INSERT>;
         };
 
-        /* Caps word when pressing the keys in the position of Z & X on the QWERTY & COLEMAK keymaps simultaneously */
+        /* Caps word when pressing the keys in the position of Z & X on the QWERTY keymap simultaneously */
         combo_caps_word {
             timeout-ms = <50>;
             key-positions = <47 48>;
@@ -152,20 +163,28 @@
             bindings = <&caps_word>;
         };
 
-        /* Caps lock when pressing the keys in the position of C & V on the QWERTY & COLEMAK keymaps simultaneously */
+        /* Caps lock when pressing the keys in the position of X & C on the QWERTY keymap simultaneously */
         combo_caps_lock {
             timeout-ms = <50>;
-            key-positions = <49 50>;
+            key-positions = <48 49>;
             layers = <QWERTY COLEMAK>;
             bindings = <&kp CAPS>;
         };
 
-        /* QWERTY shift left when pressing right thumb keys simultaneously (QWERTY layer only) */
+        /* QWERTY shift left when pressing the keys in the position of C & V on the QWERTY keymap simultaneously (QWERTY layer only) */
         combo_qwerty_shift_left {
             timeout-ms = <50>;
-            key-positions = <57 74>;
+            key-positions = <49 50>;
             layers = <QWERTY>;
-            bindings = <&mo QWERTY_SHIFT_LEFT>;
+            bindings = <&tog QWERTY_SHIFT_LEFT>;
+        };
+
+        /* COLEMAK shift left when pressing the keys in the position of C & V on the QWERTY keymap simultaneously (COLEMAK layer only) */
+        combo_colemak_shift_left {
+            timeout-ms = <50>;
+            key-positions = <49 50>;
+            layers = <COLEMAK>;
+            bindings = <&tog COLEMAK_SHIFT_LEFT>;
         };
     };
 };
@@ -178,9 +197,9 @@
             bindings = <
    &kp F1               &kp F2         &kp F3        &kp F4       &kp F5                                                                                                                                          &kp F6       &kp F7       &kp F8        &kp F9            &kp F10
    &kp EQUAL            &kp N1         &kp N2        &kp N3       &kp N4       &kp N5                                                                                                                &kp N6       &kp N7       &kp N8       &kp N9        &kp N0            &kp MINUS
-   &kp TAB              &kp Q          &kp W         &kp E        &kp R        &kp T                                                                                                                 &kp Y        &kp U        &kp I        &kp O         &kp P             &kp BSLH
+   &kp TAB              &kp Q          &kp W         &kp E        &qh R T      &kp T                                                                                                                 &kp Y        &qh U Y      &kp I        &kp O         &kp P             &kp BSLH
    &kp ESC              &hm LSHIFT A   &hm LCTRL S   &hm LALT D   &hm LGUI F   &hm LGUI G                                                                                                            &hm RGUI H   &hm RGUI J   &hm LALT K   &hm RCTRL L   &hm RSHIFT SEMI   &kp SQT
-   &kp GRAVE            &kp Z          &kp X         &kp C        &kp V        &kp B        &kp_tog LSHFT NAV   &kp_tog LCTRL NUMPAD   &kp LGUI       &kp LGUI   &kp RCTRL  &kp_tog RSHFT SYMBOLS    &kp N        &kp M        &kp COMMA    &kp DOT       &kp FSLH          &kp PG_UP
+   &kp GRAVE            &kp Z          &kp X         &kp C        &qh V B      &kp B        &kp_tog LSHFT NAV   &kp_tog LCTRL NUMPAD   &kp LGUI       &kp LGUI   &kp RCTRL  &kp_tog RSHFT SYMBOLS    &kp N        &qh M N      &kp COMMA    &kp DOT       &kp FSLH          &kp PG_UP
    &magic MAGIC QWERTY  &kp HOME       &kp END       &kp LEFT     &kp RIGHT                 &lt NAV BSPC        &lt NUMPAD TAB         &kp LALT       &kp RALT   &kp RET    &lt SYMBOLS SPACE                     &kp UP       &kp DOWN     &kp LBKT      &kp RBKT          &kp PG_DN
             >;
         };
@@ -188,12 +207,12 @@
         /* Shift the column to the right of the LHS index finger onto the index finger column to avoid having to stretch */
         layer_QWERTY_SHIFT_LEFT {
             bindings = <
-       &none   &none    &none    &none    &none                                                                            &none    &none    &none    &none    &none
-       &none   &trans   &trans   &trans   &kp N5  &trans                                                          &trans   &trans   &trans   &trans   &trans   &none
-       &none   &trans   &trans   &trans   &kp T   &trans                                                          &trans   &trans   &trans   &trans   &trans   &none
-       &none   &trans   &trans   &trans   &kp G   &trans                                                          &trans   &trans   &trans   &trans   &trans   &none
-       &none   &trans   &trans   &trans   &kp B   &trans   &none   &none   &none          &none   &none   &none   &trans   &trans   &trans   &trans   &trans   &none
-       &none   &none    &none    &none    &none            &none   &none   &none          &none   &none   &none            &none    &none    &none    &none    &none
+       &none   &none    &none    &none    &none                                                                                    &none    &none    &none    &none    &none
+       &none   &trans   &trans   &trans   &kp N5    &trans                                                                &trans   &trans    &trans   &trans   &trans   &none
+       &none   &trans   &trans   &trans   &qh R T   &trans                                                                &trans   &qh U Y   &trans   &trans   &trans   &none
+       &none   &trans   &trans   &trans   &qh F G   &trans                                                                &trans   &qh J H   &trans   &trans   &trans   &none
+       &none   &trans   &trans   &trans   &qh V B   &trans   &trans   &trans   &trans          &trans   &trans   &trans   &trans   &qh M N   &trans   &trans   &trans   &none
+       &none   &none    &none    &none    &none              &trans   &trans   &trans          &trans   &trans   &trans            &none     &none    &none    &none    &none
             >;
         };
 
@@ -201,10 +220,22 @@
             bindings = <
    &kp F1                 &kp F2         &kp F3        &kp F4      &kp F5                                                                                       &kp F6       &kp F7       &kp F8       &kp F9         &kp F10
    &kp EQUAL              &kp N1         &kp N2        &kp N3      &kp N4      &kp N5                                                              &kp N6       &kp N7       &kp N8       &kp N9       &kp N0         &kp MINUS
-   &kp TAB                &kp Q          &kp W         &kp F       &kp P       &kp B                                                               &kp J        &kp L        &kp U        &kp Y        &kp SEMI       &kp BSLH
+   &kp TAB                &kp Q          &kp W         &kp F       &qh P B     &kp B                                                               &kp J        &qh L J      &kp U        &kp Y        &kp SEMI       &kp BSLH
    &kp ESC                &hm LSHIFT A   &hm LCTRL R   &hm LALT S  &hm LGUI T  &hm LGUI G                                                          &hm RGUI M   &hm RGUI N   &hm LALT E   &hm RCTRL I  &hm RSHIFT O   &kp SQT
-   &kp GRAVE              &kp Z          &kp X         &kp C       &kp D       &kp V       &trans  &trans  &trans       &trans  &trans  &trans     &kp K        &kp H        &kp COMMA    &kp DOT      &kp FSLH       &kp PG_UP
+   &kp GRAVE              &kp Z          &kp X         &kp C       &qh D V     &kp V       &trans  &trans  &trans       &trans  &trans  &trans     &kp K        &qh H K      &kp COMMA    &kp DOT      &kp FSLH       &kp PG_UP
    &magic MAGIC COLEMAK   &kp HOME       &kp END       &kp LEFT    &kp RIGHT               &trans  &trans  &trans       &trans  &trans  &trans                  &kp UP       &kp DOWN     &kp LBKT     &kp RBKT       &kp PG_DN
+            >;
+        };
+
+        /* Shift the column to the right of the LHS index finger onto the index finger column to avoid having to stretch */
+        layer_COLEMAK_SHIFT_LEFT {
+            bindings = <
+       &none   &none    &none    &none    &none                                                                                    &none    &none    &none    &none    &none
+       &none   &trans   &trans   &trans   &kp N5    &trans                                                                &trans   &trans    &trans   &trans   &trans   &none
+       &none   &trans   &trans   &trans   &qh P B   &trans                                                                &trans   &qh L J   &trans   &trans   &trans   &none
+       &none   &trans   &trans   &trans   &qh T G   &trans                                                                &trans   &qh N M   &trans   &trans   &trans   &none
+       &none   &trans   &trans   &trans   &qh D V   &trans   &trans   &trans   &trans          &trans   &trans   &trans   &trans   &qh H K   &trans   &trans   &trans   &none
+       &none   &none    &none    &none    &none              &trans   &trans   &trans          &trans   &trans   &trans            &none     &none    &none    &none    &none
             >;
         };
 
