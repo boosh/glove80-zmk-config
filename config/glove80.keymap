@@ -173,7 +173,7 @@
             bindings = <&kp CAPS>;
         };
 
-        /* QWERTY shift left when pressing the keys in the position of C & V on the QWERTY keymap simultaneously (QWERTY layers only) */
+        /* Toggle QWERTY shift left when pressing the keys in the position of C & V on the QWERTY keymap simultaneously (QWERTY layers only) */
         combo_qwerty_shift_left {
             timeout-ms = <50>;
             key-positions = <49 50>;
@@ -181,7 +181,7 @@
             bindings = <&tog QWERTY_SHIFT_LEFT>;
         };
 
-        /* COLEMAK shift left when pressing the keys in the position of C & V on the QWERTY keymap simultaneously (COLEMAK layers only) */
+        /* Toggle COLEMAK shift left when pressing the keys in the position of C & V on the QWERTY keymap simultaneously (COLEMAK layers only) */
         combo_colemak_shift_left {
             timeout-ms = <50>;
             key-positions = <49 50>;
