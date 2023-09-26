@@ -48,7 +48,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "QUICK_HOLD";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <145>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -137,7 +137,7 @@
         combo_esc {
             timeout-ms = <50>;
             key-positions = <23 24>;
-            layers = <QWERTY COLEMAK>;
+            layers = <QWERTY QWERTY_SHIFT_LEFT COLEMAK COLEMAK_SHIFT_LEFT>;
             bindings = <&kp ESC>;
         };
 
@@ -145,7 +145,7 @@
         combo_numlock {
             timeout-ms = <50>;
             key-positions = <59 60>;
-            layers = <QWERTY COLEMAK>;
+            layers = <QWERTY QWERTY_SHIFT_LEFT COLEMAK COLEMAK_SHIFT_LEFT>;
             bindings = <&kp KP_NUM>;
         };
 
@@ -153,7 +153,7 @@
         combo_insert {
             timeout-ms = <50>;
             key-positions = <59 60>;
-            layers = <QWERTY COLEMAK>;
+            layers = <QWERTY QWERTY_SHIFT_LEFT COLEMAK COLEMAK_SHIFT_LEFT>;
             bindings = <&kp INSERT>;
         };
 
@@ -161,7 +161,7 @@
         combo_caps_word {
             timeout-ms = <50>;
             key-positions = <47 48>;
-            layers = <QWERTY COLEMAK>;
+            layers = <QWERTY QWERTY_SHIFT_LEFT COLEMAK COLEMAK_SHIFT_LEFT>;
             bindings = <&caps_word>;
         };
 
@@ -169,7 +169,7 @@
         combo_caps_lock {
             timeout-ms = <50>;
             key-positions = <48 49>;
-            layers = <QWERTY COLEMAK>;
+            layers = <QWERTY QWERTY_SHIFT_LEFT COLEMAK COLEMAK_SHIFT_LEFT>;
             bindings = <&kp CAPS>;
         };
 
