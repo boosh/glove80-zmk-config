@@ -209,12 +209,12 @@
         /* Shift the column to the right of the LHS index finger onto the index finger column to avoid having to stretch */
         layer_QWERTY_SHIFT_LEFT {
             bindings = <
-        &none   &none    &none    &none    &none                                                                                    &none    &none    &none    &none    &none
-        &none   &trans   &trans   &trans   &kp N5    &trans                                                                &trans   &trans    &trans   &trans   &trans   &none
-        &none   &trans   &trans   &trans   &qh T R   &trans                                                                &trans   &qh Y U   &trans   &trans   &trans   &none
-        &none   &trans   &trans   &trans   &qh G F   &trans                                                                &trans   &qh H J   &trans   &trans   &trans   &none
-        &none   &trans   &trans   &trans   &qh B V   &trans   &trans   &trans   &trans          &trans   &trans   &trans   &trans   &qh N M   &trans   &trans   &trans   &none
-        &none   &none    &none    &none    &none              &trans   &trans   &trans          &trans   &trans   &trans            &none     &none    &none    &none    &none
+        &none   &none    &none    &none    &none                                                                                      &none    &none    &none    &none    &none
+        &none   &trans   &trans   &trans   &qh N5 N4   &trans                                                                &trans   &trans    &trans   &trans   &trans   &none
+        &none   &trans   &trans   &trans   &qh T R     &trans                                                                &trans   &qh Y U   &trans   &trans   &trans   &none
+        &none   &trans   &trans   &trans   &qh G F     &trans                                                                &trans   &qh H J   &trans   &trans   &trans   &none
+        &none   &trans   &trans   &trans   &qh B V     &trans   &trans   &trans   &trans          &trans   &trans   &trans   &trans   &qh N M   &trans   &trans   &trans   &none
+        &none   &none    &none    &none    &none                &trans   &trans   &trans          &trans   &trans   &trans            &none     &none    &none    &none    &none
             >;
         };
 
@@ -232,12 +232,12 @@
         /* Shift the column to the right of the LHS index finger onto the index finger column to avoid having to stretch */
         layer_COLEMAK_SHIFT_LEFT {
             bindings = <
-        &none   &none    &none    &none    &none                                                                                    &none    &none    &none    &none    &none
-        &none   &trans   &trans   &trans   &kp N5    &trans                                                                &trans   &trans    &trans   &trans   &trans   &none
-        &none   &trans   &trans   &trans   &qh B P   &trans                                                                &trans   &qh J L   &trans   &trans   &trans   &none
-        &none   &trans   &trans   &trans   &qh G T   &trans                                                                &trans   &qh M N   &trans   &trans   &trans   &none
-        &none   &trans   &trans   &trans   &qh V D   &trans   &trans   &trans   &trans          &trans   &trans   &trans   &trans   &qh K H   &trans   &trans   &trans   &none
-        &none   &none    &none    &none    &none              &trans   &trans   &trans          &trans   &trans   &trans            &none     &none    &none    &none    &none
+        &none   &none    &none    &none    &none                                                                                      &none    &none    &none    &none    &none
+        &none   &trans   &trans   &trans   &qh N5 N4   &trans                                                                &trans   &trans    &trans   &trans   &trans   &none
+        &none   &trans   &trans   &trans   &qh B P     &trans                                                                &trans   &qh J L   &trans   &trans   &trans   &none
+        &none   &trans   &trans   &trans   &qh G T     &trans                                                                &trans   &qh M N   &trans   &trans   &trans   &none
+        &none   &trans   &trans   &trans   &qh V D     &trans   &trans   &trans   &trans          &trans   &trans   &trans   &trans   &qh K H   &trans   &trans   &trans   &none
+        &none   &none    &none    &none    &none                &trans   &trans   &trans          &trans   &trans   &trans            &none     &none    &none    &none    &none
             >;
         };
 
