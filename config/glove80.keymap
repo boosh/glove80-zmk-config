@@ -199,9 +199,9 @@
             bindings = <
         &kp F1               &kp F2         &kp F3        &kp F4       &kp F5                                                                                                                                          &kp F6       &kp F7       &kp F8        &kp F9            &kp F10
         &kp EQUAL            &kp N1         &kp N2        &kp N3       &kp N4       &kp N5                                                                                                                &kp N6       &kp N7       &kp N8       &kp N9        &kp N0            &kp MINUS
-        &kp TAB              &kp Q          &kp W         &kp E        &qh T R      &kp T                                                                                                                 &kp Y        &qh Y U      &kp I        &kp O         &kp P             &kp BSLH
+        &kp TAB              &kp Q          &kp W         &kp E        &kp R        &kp T                                                                                                                 &kp Y        &kp U        &kp I        &kp O         &kp P             &kp BSLH
         &kp ESC              &hm LSHIFT A   &hm LCTRL S   &hm LALT D   &hm LGUI F   &hm LGUI G                                                                                                            &hm RGUI H   &hm RGUI J   &hm LALT K   &hm RCTRL L   &hm RSHIFT SEMI   &kp SQT
-        &kp GRAVE            &kp Z          &kp X         &kp C        &qh B V      &kp B        &kp_tog LSHFT NAV   &kp_tog LCTRL NUMPAD   &kp LGUI       &kp LGUI   &kp RCTRL  &kp_tog RSHFT SYMBOLS    &kp N        &qh N M      &kp COMMA    &kp DOT       &kp FSLH          &kp PG_UP
+        &kp GRAVE            &kp Z          &kp X         &kp C        &kp V        &kp B        &kp_tog LSHFT NAV   &kp_tog LCTRL NUMPAD   &kp LGUI       &kp LGUI   &kp RCTRL  &kp_tog RSHFT SYMBOLS    &kp N        &kp M        &kp COMMA    &kp DOT       &kp FSLH          &kp PG_UP
         &magic MAGIC QWERTY  &kp HOME       &kp END       &kp LEFT     &kp RIGHT                 &lt NAV BSPC        &lt NUMPAD TAB         &kp LALT       &kp RALT   &kp RET    &lt SYMBOLS SPACE                     &kp UP       &kp DOWN     &kp LBKT      &kp RBKT          &kp PG_DN
             >;
         };
@@ -222,9 +222,9 @@
             bindings = <
        &kp F1                 &kp F2         &kp F3        &kp F4      &kp F5                                                                                       &kp F6       &kp F7       &kp F8       &kp F9         &kp F10
        &kp EQUAL              &kp N1         &kp N2        &kp N3      &kp N4      &kp N5                                                              &kp N6       &kp N7       &kp N8       &kp N9       &kp N0         &kp MINUS
-       &kp TAB                &kp Q          &kp W         &kp F       &qh B P     &kp B                                                               &kp J        &qh J L      &kp U        &kp Y        &kp SEMI       &kp BSLH
+       &kp TAB                &kp Q          &kp W         &kp F       &kp P       &kp B                                                               &kp J        &kp L        &kp U        &kp Y        &kp SEMI       &kp BSLH
        &kp ESC                &hm LSHIFT A   &hm LCTRL R   &hm LALT S  &hm LGUI T  &hm LGUI G                                                          &hm RGUI M   &hm RGUI N   &hm LALT E   &hm RCTRL I  &hm RSHIFT O   &kp SQT
-       &kp GRAVE              &kp Z          &kp X         &kp C       &qh V D     &kp V       &trans  &trans  &trans       &trans  &trans  &trans     &kp K        &qh K H      &kp COMMA    &kp DOT      &kp FSLH       &kp PG_UP
+       &kp GRAVE              &kp Z          &kp X         &kp C       &kp D       &kp V       &trans  &trans  &trans       &trans  &trans  &trans     &kp K        &kp H        &kp COMMA    &kp DOT      &kp FSLH       &kp PG_UP
        &magic MAGIC COLEMAK   &kp HOME       &kp END       &kp LEFT    &kp RIGHT               &trans  &trans  &trans       &trans  &trans  &trans                  &kp UP       &kp DOWN     &kp LBKT     &kp RBKT       &kp PG_DN
             >;
         };
@@ -245,7 +245,7 @@
             bindings = <
         &trans     &trans              &trans          &trans          &trans                                                                                                 &trans                &trans             &trans                  &trans                  &trans
         &trans     &trans              &trans          &trans          &trans                &trans                                                              &trans       &trans                &trans             &trans                  &trans                  &trans
-        &trans     &kp EXCL            &kp AT          &kp LA(N3)      &qh PERCENT DOLLAR    &kp PERCENT                                                         &kp CARET    &qh CARET AMPERSAND   &kp ASTERISK       &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS   &trans
+        &trans     &kp EXCL            &kp AT          &kp LA(N3)      &kp DOLLAR            &kp PERCENT                                                         &kp CARET    &kp AMPERSAND         &kp ASTERISK       &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS   &trans
         &trans     &hm LSHIFT N1       &hm LCTRL N2    &hm LALT N3     &hm LGUI N4           &hm LGUI N5                                                         &hm RGUI N6  &hm RGUI N7           &hm LALT N8        &hm RCTRL N9            &hm RSHIFT N0           &trans
         &trans     AS(GRAVE)           AS(BACKSLASH)   &none           AS(MINUS)             &none          &trans  &trans  &trans      &trans  &trans  &trans   &kp LS(N3)   AS(EQUAL)             AS(LEFT_BRACKET)   AS(RIGHT_BRACKET)       AS(SINGLE_QUOTE)        &trans
         &trans     &trans              &trans          &trans          &trans                               &trans  &trans  &trans      &trans  &trans  &trans                &trans                &trans             &trans                  &trans                  &trans
