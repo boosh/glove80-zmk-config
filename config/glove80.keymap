@@ -32,7 +32,8 @@
 
 / {
     behaviors {
-        hm: homerow_mods {
+        /* Tap and hold with a longer duration for keys that invoke modifiers (e.g. home row, auto copy-paste, etc.) */
+        lh: long_hold {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
@@ -200,8 +201,8 @@
         &kp F1               &kp F2         &kp F3        &kp F4       &kp F5                                                                                                                                          &kp F6       &kp F7       &kp F8        &kp F9            &kp F10
         &kp EQUAL            &kp N1         &kp N2        &kp N3       &kp N4       &kp N5                                                                                                                &kp N6       &kp N7       &kp N8       &kp N9        &kp N0            &kp MINUS
         &kp TAB              &kp Q          &kp W         &kp E        &kp R        &kp T                                                                                                                 &kp Y        &kp U        &kp I        &kp O         &kp P             &kp BSLH
-        &kp ESC              &hm LSHIFT A   &hm LCTRL S   &hm LALT D   &hm LGUI F   &hm LGUI G                                                                                                            &hm RGUI H   &hm RGUI J   &hm LALT K   &hm RCTRL L   &hm RSHIFT SEMI   &kp SQT
-        &kp GRAVE            &kp Z          &kp X         &hm LG(C) C  &hm LG(V) V  &kp B        &kp_tog LSHFT NAV   &kp_tog LCTRL NUMPAD   &kp LGUI       &kp LGUI   &kp RCTRL  &kp_tog RSHFT SYMBOLS    &kp N        &kp M        &kp COMMA    &kp DOT       &kp FSLH          &kp PG_UP
+        &kp ESC              &lh LSHIFT A   &lh LCTRL S   &lh LALT D   &lh LGUI F   &lh LGUI G                                                                                                            &lh RGUI H   &lh RGUI J   &lh LALT K   &lh RCTRL L   &lh RSHIFT SEMI   &kp SQT
+        &kp GRAVE            &lh LG(Z) Z    &lh LG(X) X   &lh LG(C) C  &lh LG(V) V  &kp B        &kp_tog LSHFT NAV   &kp_tog LCTRL NUMPAD   &kp LGUI       &kp LGUI   &kp RCTRL  &kp_tog RSHFT SYMBOLS    &kp N        &kp M        &kp COMMA    &kp DOT       &kp FSLH          &kp PG_UP
         &magic MAGIC QWERTY  &kp HOME       &kp END       &kp LEFT     &kp RIGHT                 &lt NAV BSPC        &lt NUMPAD TAB         &kp LALT       &kp RALT   &kp RET    &lt SYMBOLS SPACE                     &kp UP       &kp DOWN     &kp LBKT      &kp RBKT          &kp PG_DN
             >;
         };
@@ -223,8 +224,8 @@
        &kp F1                 &kp F2         &kp F3        &kp F4      &kp F5                                                                                       &kp F6       &kp F7       &kp F8       &kp F9         &kp F10
        &kp EQUAL              &kp N1         &kp N2        &kp N3      &kp N4      &kp N5                                                              &kp N6       &kp N7       &kp N8       &kp N9       &kp N0         &kp MINUS
        &kp TAB                &kp Q          &kp W         &kp F       &kp P       &kp B                                                               &kp J        &kp L        &kp U        &kp Y        &kp SEMI       &kp BSLH
-       &kp ESC                &hm LSHIFT A   &hm LCTRL R   &hm LALT S  &hm LGUI T  &hm LGUI G                                                          &hm RGUI M   &hm RGUI N   &hm LALT E   &hm RCTRL I  &hm RSHIFT O   &kp SQT
-       &kp GRAVE              &kp Z          &kp X         &hm LG(C) C &hm LG(V) D &kp V       &trans  &trans  &trans       &trans  &trans  &trans     &kp K        &kp H        &kp COMMA    &kp DOT      &kp FSLH       &kp PG_UP
+       &kp ESC                &lh LSHIFT A   &lh LCTRL R   &lh LALT S  &lh LGUI T  &lh LGUI G                                                          &lh RGUI M   &lh RGUI N   &lh LALT E   &lh RCTRL I  &lh RSHIFT O   &kp SQT
+       &kp GRAVE              &lh LG(Z) Z    &lh LG(X) X   &lh LG(C) C &lh LG(V) D &kp V       &trans  &trans  &trans       &trans  &trans  &trans     &kp K        &kp H        &kp COMMA    &kp DOT      &kp FSLH       &kp PG_UP
        &magic MAGIC COLEMAK   &kp HOME       &kp END       &kp LEFT    &kp RIGHT               &trans  &trans  &trans       &trans  &trans  &trans                  &kp UP       &kp DOWN     &kp LBKT     &kp RBKT       &kp PG_DN
             >;
         };
@@ -246,7 +247,7 @@
         &trans     &trans              &trans          &trans          &trans                                                                                                 &trans                &trans             &trans                  &trans                  &trans
         &trans     &trans              &trans          &trans          &trans                &trans                                                              &trans       &trans                &trans             &trans                  &trans                  &trans
         &trans     &kp EXCL            &kp AT          &kp LA(N3)      &kp DOLLAR            &kp PERCENT                                                         &kp CARET    &kp AMPERSAND         &kp ASTERISK       &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS   &trans
-        &trans     &hm LSHIFT N1       &hm LCTRL N2    &hm LALT N3     &hm LGUI N4           &hm LGUI N5                                                         &hm RGUI N6  &hm RGUI N7           &hm LALT N8        &hm RCTRL N9            &hm RSHIFT N0           &trans
+        &trans     &lh LSHIFT N1       &lh LCTRL N2    &lh LALT N3     &lh LGUI N4           &lh LGUI N5                                                         &lh RGUI N6  &lh RGUI N7           &lh LALT N8        &lh RCTRL N9            &lh RSHIFT N0           &trans
         &trans     AS(GRAVE)           AS(BACKSLASH)   &none           AS(MINUS)             &none          &trans  &trans  &trans      &trans  &trans  &trans   &kp LS(N3)   AS(EQUAL)             AS(LEFT_BRACKET)   AS(RIGHT_BRACKET)       AS(SINGLE_QUOTE)        &trans
         &trans     &trans              &trans          &trans          &trans                               &trans  &trans  &trans      &trans  &trans  &trans                &trans                &trans             &trans                  &trans                  &trans
             >;
@@ -257,7 +258,7 @@
         &trans    &trans          &trans          &trans        &trans                                                                                       &trans                &trans                &trans               &trans                   &trans
         &trans    &trans          &trans          &trans        &trans      &trans                                                                &trans     &trans                &trans                &trans               &trans                   &trans
         &trans    &kp F1          &kp F2          &kp F3        &kp F4      &kp F5                                                                &kp F6     &kp F7                &kp F8                &kp F9               &kp F10                  &kp F11
-        &trans    &hm LSHIFT F11  &hm LCTRL F12   &hm LALT DEL  &kp ESCAPE  &kp DEL                                                               &none      &kp LEFT_ARROW        &kp DOWN_ARROW        &kp UP_ARROW         &kp RIGHT_ARROW          &kp F12
+        &trans    &lh LSHIFT F11  &lh LCTRL F12   &lh LALT DEL  &kp ESCAPE  &kp DEL                                                               &none      &kp LEFT_ARROW        &kp DOWN_ARROW        &kp UP_ARROW         &kp RIGHT_ARROW          &kp F12
         &trans    &kp LG(Z)       &kp LG(X)       &kp LG(C)     &kp LG(V)   &kp LG(B)   &trans   &trans  &trans        &trans  &trans  &trans     &kp CAPS   &kp HOME              &kp PG_DN             &kp PG_UP            &kp END                  &trans
         &trans    &trans          &trans          &trans        &trans                  &trans   &trans  &trans        &trans  &trans  &trans                &trans                &trans                &trans               &trans                   &trans
             >;
