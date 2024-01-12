@@ -45,13 +45,16 @@
             bindings = <&kp>, <&kp>;
         };
 
-        /* Home-row mod for the shift keys, optimised for faster typing. Same as above but without require prior idle */
+        /*
+           Home-row mod for the shift keys, optimised for faster typing.
+           Same as above but without require prior idle and shorter tapping terms
+        */
         hs: home_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "HOME_SHIFT";
             #binding-cells = <2>;
-            tapping-term-ms = <190>;
-            quick-tap-ms = <190>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <150>;
             global-quick-tap;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
