@@ -45,6 +45,19 @@
             bindings = <&kp>, <&kp>;
         };
 
+        /* Home-row mod for the shift keys, optimised for faster typing. Same as above but without require prior idle */
+        hs: home_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <190>;
+            quick-tap-ms = <190>;
+            // require-prior-idle-ms = <125>;
+            global-quick-tap;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+
         /* Tap and hold with a short duration for normal keys (i.e. shift left/right keys) */
         qh: quick_hold {
             compatible = "zmk,behavior-hold-tap";
@@ -206,7 +219,7 @@
         &kp F1               &kp F2         &kp F3        &kp F4          &kp F5                                                                                                                                             &kp F6       &kp F7       &kp F8        &kp F9            &kp F10
         &kp EQUAL            &kp N1         &kp N2        &kp N3          &kp N4          &kp N5                                                                                                                &kp N6       &kp N7       &kp N8       &kp N9        &kp N0            &kp MINUS
         &kp TAB              &kp Q          &kp W         &lh LA(TAB) E   &lh LG(TAB) R   &kp T                                                                                                                 &kp Y        &kp U        &kp I        &kp O         &kp P             &kp BSLH
-        &kp ESC              &lh LSHIFT A   &lh LCTRL S   &lh LALT D      &lh LGUI F      &lh LGUI G                                                                                                            &lh RGUI H   &lh RGUI J   &lh LALT K   &lh RCTRL L   &lh RSHIFT SEMI   &kp SQT
+        &kp ESC              &hs LSHIFT A   &lh LCTRL S   &lh LALT D      &lh LGUI F      &lh LGUI G                                                                                                            &lh RGUI H   &lh RGUI J   &lh LALT K   &lh RCTRL L   &hs RSHIFT SEMI   &kp SQT
         &kp GRAVE            &lh LG(Z) Z    &lh LG(X) X   &lh LG(C) C     &lh LG(V) V     &kp B        &kp_tog LSHFT NAV   &kp_tog LCTRL NUMPAD   &kp LGUI       &kp LGUI   &kp RCTRL  &kp_tog RSHFT SYMBOLS    &kp N        &kp M        &kp COMMA    &kp DOT       &kp FSLH          &kp PG_UP
         &magic MAGIC QWERTY  &kp HOME       &kp END       &kp LEFT        &kp RIGHT                    &lt NAV BSPC        &lt NUMPAD TAB         &kp LALT       &kp RALT   &kp RET    &lt SYMBOLS SPACE                     &kp UP       &kp DOWN     &kp LBKT      &kp RBKT          &kp PG_DN
             >;
@@ -229,7 +242,7 @@
        &kp F1                 &kp F2         &kp F3        &kp F4          &kp F5                                                                                           &kp F6       &kp F7       &kp F8       &kp F9         &kp F10
        &kp EQUAL              &kp N1         &kp N2        &kp N3          &kp N4          &kp N5                                                              &kp N6       &kp N7       &kp N8       &kp N9       &kp N0         &kp MINUS
        &kp TAB                &kp Q          &kp W         &lh LA(TAB) F   &lh LG(TAB) P   &kp B                                                               &kp J        &kp L        &kp U        &kp Y        &kp SEMI       &kp BSLH
-       &kp ESC                &lh LSHIFT A   &lh LCTRL R   &lh LALT S      &lh LGUI T      &lh LGUI G                                                          &lh RGUI M   &lh RGUI N   &lh LALT E   &lh RCTRL I  &lh RSHIFT O   &kp SQT
+       &kp ESC                &hs LSHIFT A   &lh LCTRL R   &lh LALT S      &lh LGUI T      &lh LGUI G                                                          &lh RGUI M   &lh RGUI N   &lh LALT E   &lh RCTRL I  &hs RSHIFT O   &kp SQT
        &kp GRAVE              &lh LG(Z) Z    &lh LG(X) X   &lh LG(C) C     &lh LG(V) D     &kp V       &trans  &trans  &trans       &trans  &trans  &trans     &kp K        &kp H        &kp COMMA    &kp DOT      &kp FSLH       &kp PG_UP
        &magic MAGIC COLEMAK   &kp HOME       &kp END       &kp LEFT        &kp RIGHT                   &trans  &trans  &trans       &trans  &trans  &trans                  &kp UP       &kp DOWN     &kp LBKT     &kp RBKT       &kp PG_DN
             >;
