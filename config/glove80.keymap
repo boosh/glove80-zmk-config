@@ -37,14 +37,14 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <180>;
+            tapping-term-ms = <190>;
             quick-tap-ms = <100>;
             global-quick-tap;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
 
-        /* Tap and hold with a short duration for normal keys */
+        /* Tap and hold with a short duration for normal keys (i.e. shift left/right keys) */
         qh: quick_hold {
             compatible = "zmk,behavior-hold-tap";
             label = "QUICK_HOLD";
@@ -175,20 +175,24 @@
         };
 
         /* Toggle QWERTY shift left when pressing the keys in the position of C & V on the QWERTY keymap simultaneously (QWERTY layers only) */
+        /*
         combo_qwerty_shift_left {
             timeout-ms = <50>;
             key-positions = <49 50>;
             layers = <QWERTY QWERTY_SHIFT_LEFT>;
             bindings = <&tog QWERTY_SHIFT_LEFT>;
         };
+        */
 
         /* Toggle COLEMAK shift left when pressing the keys in the position of C & V on the QWERTY keymap simultaneously (COLEMAK layers only) */
+        /*
         combo_colemak_shift_left {
             timeout-ms = <50>;
             key-positions = <49 50>;
             layers = <COLEMAK COLEMAK_SHIFT_LEFT>;
             bindings = <&tog COLEMAK_SHIFT_LEFT>;
         };
+        */
     };
 };
 
