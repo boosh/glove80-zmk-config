@@ -32,7 +32,7 @@
 
 / {
     behaviors {
-        /* Tap and hold with a longer duration for keys that invoke functions (e.g. alt-tabbing, auto copy-paste, etc.) */
+        /* Tap and hold with a longer duration for keys that invoke functions (e.g. alt-tabbing, etc.) */
         lh: long_hold {
             compatible = "zmk,behavior-hold-tap";
             label = "LONG_HOLD";
@@ -45,10 +45,10 @@
             bindings = <&kp>, <&kp>;
         };
 
-        /* Tap and hold with a medium duration for home-row modifiers */
-        hm: home_row {
+        /* Tap and hold with a medium duration, e.g. for home-row modifiers */
+        mh: medium_hold {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            label = "MEDIUM_HOLD";
             #binding-cells = <2>;
             tapping-term-ms = <190>;
             quick-tap-ms = <190>;
@@ -59,12 +59,12 @@
         };
 
         /*
-           Home-row mod for the shift keys on character layers, optimised for faster typing.
-           Same as above but without require prior idle and shorter tapping terms
+           Short holds optimised for faster typing. Use for the shift key home-row mods on character layers.
+           Same as medium hold but without require-prior-idle and shorter tapping terms
         */
-        hs: home_shift {
+        sh: short_hold {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOME_SHIFT";
+            label = "SHORT_HOLD";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             quick-tap-ms = <150>;
@@ -234,8 +234,8 @@
         &kp F1               &kp F2         &kp F3        &kp F4          &kp F5                                                                                                                                                  &kp F6       &kp F7       &kp F8        &kp F9            &kp F10
         &kp EQUAL            &kp N1         &kp N2        &kp N3          &kp N4          &kp N5                                                                                                                     &kp N6       &kp N7       &kp N8       &kp N9        &kp N0            &kp MINUS
         &kp TAB              &kp Q          &kp W         &lh LA(TAB) E   &lh LG(TAB) R   &kp T                                                                                                                      &kp Y        &kp U        &kp I        &kp O         &kp P             &kp BSLH
-        &kp ESC              &hs LSHIFT A   &hm LCTRL S   &hm LALT D      &hm LGUI F      &hm LGUI G                                                                                                                 &hm RGUI H   &hm RGUI J   &hm LALT K   &hm RCTRL L   &hs RSHIFT SEMI   &kp SQT
-        &kp GRAVE            &lh LG(Z) Z    &lh LG(X) X   &lh LG(C) C     &lh LG(V) V     &kp B        &kp_tog LSHFT NAV   &kp_tog LCTRL NUMPAD   &kp LGUI       &kp LGUI   &kp RCTRL  &kp_tog RSHFT SYMBOLS         &kp N        &kp M        &kp COMMA    &kp DOT       &kp FSLH          &kp PG_UP
+        &kp ESC              &sh LSHIFT A   &mh LCTRL S   &mh LALT D      &mh LGUI F      &mh LGUI G                                                                                                                 &mh RGUI H   &mh RGUI J   &mh LALT K   &mh RCTRL L   &sh RSHIFT SEMI   &kp SQT
+        &kp GRAVE            &lh LG(Z) Z    &lh LG(X) X   &mh LG(C) C     &lh LG(V) V     &kp B        &kp_tog LSHFT NAV   &kp_tog LCTRL NUMPAD   &kp LGUI       &kp LGUI   &kp RCTRL  &kp_tog RSHFT SYMBOLS         &kp N        &kp M        &kp COMMA    &kp DOT       &kp FSLH          &kp PG_UP
         &magic MAGIC QWERTY  &kp HOME       &kp END       &kp LEFT        &kp RIGHT                    &lt NAV BSPC        &lt NUMPAD TAB         &kp LALT       &kp RALT   &kp RET    &lt SYMBOLS SPACE                          &kp UP       &kp DOWN     &kp LBKT      &kp RBKT          &kp PG_DN
             >;
         };
@@ -257,8 +257,8 @@
        &kp F1                 &kp F2         &kp F3        &kp F4          &kp F5                                                                                            &kp F6       &kp F7       &kp F8       &kp F9         &kp F10
        &kp EQUAL              &kp N1         &kp N2        &kp N3          &kp N4          &kp N5                                                              &kp N6        &kp N7       &kp N8       &kp N9       &kp N0         &kp MINUS
        &kp TAB                &kp Q          &kp W         &lh LA(TAB) F   &lh LG(TAB) P   &kp B                                                               &kp J         &kp L        &kp U        &kp Y        &kp SEMI       &kp BSLH
-       &kp ESC                &hs LSHIFT A   &hm LCTRL R   &hm LALT S      &hm LGUI T      &hm LGUI G                                                          &hm RGUI M    &hm RGUI N   &hm LALT E   &hm RCTRL I  &hs RSHIFT O   &kp SQT
-       &kp GRAVE              &lh LG(Z) Z    &lh LG(X) X   &lh LG(C) C     &lh LG(V) D     &kp V       &trans  &trans  &trans       &trans  &trans  &trans     &kp K         &kp H        &kp COMMA    &kp DOT      &kp FSLH       &kp PG_UP
+       &kp ESC                &sh LSHIFT A   &mh LCTRL R   &mh LALT S      &mh LGUI T      &mh LGUI G                                                          &mh RGUI M    &mh RGUI N   &mh LALT E   &mh RCTRL I  &sh RSHIFT O   &kp SQT
+       &kp GRAVE              &lh LG(Z) Z    &lh LG(X) X   &mh LG(C) C     &lh LG(V) D     &kp V       &trans  &trans  &trans       &trans  &trans  &trans     &kp K         &kp H        &kp COMMA    &kp DOT      &kp FSLH       &kp PG_UP
        &magic MAGIC COLEMAK   &kp HOME       &kp END       &kp LEFT        &kp RIGHT                   &trans  &trans  &trans       &trans  &trans  &trans                   &kp UP       &kp DOWN     &kp LBKT     &kp RBKT       &kp PG_DN
             >;
         };
@@ -280,7 +280,7 @@
         &trans     &trans              &trans          &trans          &trans                                                                                                 &trans          &trans             &trans                  &trans                  &trans
         &trans     &trans              &trans          &trans          &trans                &trans                                                              &trans       &trans          &trans             &trans                  &trans                  &trans
         &trans     &kp EXCL            &kp AT          &kp LA(N3)      &kp DOLLAR            &kp PERCENT                                                         &kp CARET    &kp AMPERSAND   &kp ASTERISK       &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS   &trans
-        &trans     &hm LSHIFT N1       &hm LCTRL N2    &hm LALT N3     &hm LGUI N4           &kp N5                                                              &kp N6       &hm RGUI N7     &hm LALT N8        &hm RCTRL N9            &hm RSHIFT N0           &trans
+        &trans     &mh LSHIFT N1       &mh LCTRL N2    &mh LALT N3     &mh LGUI N4           &kp N5                                                              &kp N6       &mh RGUI N7     &mh LALT N8        &mh RCTRL N9            &mh RSHIFT N0           &trans
         &trans     AS(GRAVE)           AS(BACKSLASH)   &none           AS(MINUS)             &none          &trans  &trans  &trans      &trans  &trans  &trans   &kp LS(N3)   AS(EQUAL)       AS(LEFT_BRACKET)   AS(RIGHT_BRACKET)       AS(SINGLE_QUOTE)        &trans
         &trans     &trans              &trans          &trans          &trans                               &trans  &trans  &trans      &trans  &trans  &trans                &trans          &trans             &trans                  &trans                  &trans
             >;
@@ -291,7 +291,7 @@
         &trans    &trans          &trans          &trans        &trans                                                                                            &trans                &trans                &trans               &trans                   &trans
         &trans    &trans          &trans          &trans        &trans           &trans                                                                &trans     &trans                &trans                &trans               &trans                   &trans
         &trans    &kp F1          &kp F2          &kp F3        &kp F4           &kp F5                                                                &kp F6     &kp F7                &kp F8                &kp F9               &kp F10                  &kp F11
-        &trans    &hm LSHIFT F11  &hm LCTRL F12   &hm LALT DEL  &hm LGUI ESCAPE  &kp DEL                                                               &none      &kp LEFT_ARROW        &kp DOWN_ARROW        &kp UP_ARROW         &kp RIGHT_ARROW          &kp F12
+        &trans    &mh LSHIFT F11  &mh LCTRL F12   &mh LALT DEL  &mh LGUI ESCAPE  &kp DEL                                                               &none      &kp LEFT_ARROW        &kp DOWN_ARROW        &kp UP_ARROW         &kp RIGHT_ARROW          &kp F12
         &trans    &kp LG(Z)       &kp LG(X)       &kp LG(C)     &kp LG(V)        &kp LG(B)   &trans   &trans  &trans        &trans  &trans  &trans     &kp CAPS   &kp HOME              &kp PG_DN             &kp PG_UP            &kp END                  &trans
         &trans    &trans          &trans          &trans        &trans                       &trans   &trans  &trans        &trans  &trans  &trans                &trans                &trans                &trans               &trans                   &trans
             >;
