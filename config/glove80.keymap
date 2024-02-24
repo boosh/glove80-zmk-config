@@ -247,6 +247,14 @@
             bindings = <&mkp MCLK>;
         };
 
+        /* Middle mouse click when pressing J & K on the mouse layer */
+        combo_middle_click_mirror {
+            timeout-ms = <50>;
+            key-positions = <41 42>;
+            layers = <MOUSE>;
+            bindings = <&mkp MCLK>;
+        };
+
         /* Toggle QWERTY shift left when pressing the keys in the position of C & V on the QWERTY keymap simultaneously (QWERTY layers only) */
         /*
         combo_qwerty_shift_left {
