@@ -232,10 +232,10 @@
             bindings = <&kp CAPS>;
         };
 
-        /* Toggle the mouse layer when pressing backspace and delete */
+        /* Toggle the mouse layer when pressing F and G */
         combo_toggle_mouse {
             timeout-ms = <50>;
-            key-positions = <69 70>;
+            key-positions = <38 39>;
             bindings = <&tog MOUSE>;
         };
 
