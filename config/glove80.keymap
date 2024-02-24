@@ -152,11 +152,13 @@
         /* Mouse triple left-click */
         ZMK_MACRO(triple_click,
             tap-ms = <20>;
-            bindings = <&mkp LCLK &mkp LCLK>;
+            bindings = <&mkp LCLK &mkp LCLK &mkp LCLK>;
         )
 
         /* Double press command key (to trigger dictation on mac) */
         ZMK_MACRO(double_gui,
+            wait-ms = <30>;
+            tap-ms = <40>;
             bindings = <&kp LGUI &kp LGUI>;
         )
     };
@@ -186,7 +188,15 @@
         combo_esc {
             timeout-ms = <50>;
             key-positions = <23 24>;
-            layers = <QWERTY QWERTY_SHIFT_LEFT COLEMAK COLEMAK_SHIFT_LEFT>;
+            layers = <QWERTY QWERTY_SHIFT_LEFT COLEMAK COLEMAK_SHIFT_LEFT MOUSE>;
+            bindings = <&kp ESC>;
+        };
+
+        /* ESC when pressing keys in the position of O & P on the QWERTY keymap simultaneously */
+        combo_esc_mirror {
+            timeout-ms = <50>;
+            key-positions = <31 32>;
+            layers = <MOUSE>;
             bindings = <&kp ESC>;
         };
 
@@ -344,12 +354,12 @@
 
         layer_MOUSE {
             bindings = <
-        &none     &none        &none         &none          &none                                                                                              &none        &none         &none         &none          &none
-        &none     &none        &none         &none          &none          &none                                                                      &none    &none        &kp FSLH      &kp ASTERISK  &none          &none
-        &none     &none        &none         &triple_click  &double_click  &lh LG(TAB) R                                                              &kp F4   &kp KP_N7    &kp KP_N8     &kp KP_N9     &kp KP_MINUS   &none
-        &none     &kp PG_UP    &kp PG_DN     &mkp RCLK      &mkp LCLK      &lh LA(TAB) E                                                              &kp F2   &kp KP_N4    &kp KP_N5     &kp KP_N6     &kp KP_PLUS    &none
-        &none     &none        &none         &mh LG(C) C    &lh LG(V) V    &double_gui     &none    &none    &none        &none   &none   &none       &none    &kp KP_N1    &kp KP_N2     &kp KP_N3     &kp KP_DOT     &none
-        &none     &none        &none         &none          &none                          &none    &none    &none        &none   &none   &kp KP_N0            &none        &none         &none         &none          &none
+        &none     &none        &none         &none          &none                                                                                                     &none           &none           &none         &none          &none
+        &none     &none        &none         &none          &none          &none                                                                      &none           &none           &none           &none         &none          &none
+        &none     &none        &none         &triple_click  &double_click  &lh LG(TAB) R                                                              &lh LG(TAB) R   &double_click   &triple_click   &none         &none          &none
+        &none     &kp PG_UP    &kp PG_DN     &mkp RCLK      &mkp LCLK      &lh LA(TAB) E                                                              &lh LA(TAB) E   &mkp LCLK       &mkp RCLK       &kp PG_DN     &kp PG_UP      &none
+        &none     &none        &none         &mh LG(C) C    &lh LG(V) V    &double_gui     &none    &none    &none        &none   &none   &none       &double_gui     &lh LG(V) V     &mh LG(C) C     &none         &none          &none
+        &none     &none        &none         &none          &none                          &none    &none    &none        &none   &none   &kp KP_N0                   &none           &none           &none         &none          &none
             >;
         };
 
