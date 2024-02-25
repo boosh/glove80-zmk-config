@@ -17,14 +17,13 @@
 #include <dt-bindings/zmk/mouse.h>
 
 #define QWERTY 0
-#define QWERTY_SHIFT_LEFT 1
+#define QWERTY_MIRROR 1
 #define COLEMAK 2
-#define COLEMAK_SHIFT_LEFT 3
-#define SYMBOLS 4
-#define NAV 5
-#define NUMPAD 6
-#define MOUSE 7
-#define MAGIC 8
+#define SYMBOLS 3
+#define NAV 4
+#define NUMPAD 5
+#define MOUSE 6
+#define MAGIC 7
 
 #define AS(keycode) &qh LS(keycode) keycode     // Autoshift Macro
 
@@ -188,7 +187,7 @@
         combo_esc {
             timeout-ms = <50>;
             key-positions = <23 24>;
-            layers = <QWERTY QWERTY_SHIFT_LEFT COLEMAK COLEMAK_SHIFT_LEFT MOUSE>;
+            layers = <QWERTY COLEMAK MOUSE>;
             bindings = <&kp ESC>;
         };
 
@@ -204,7 +203,7 @@
         combo_numlock {
             timeout-ms = <50>;
             key-positions = <59 60>;
-            layers = <QWERTY QWERTY_SHIFT_LEFT COLEMAK COLEMAK_SHIFT_LEFT>;
+            layers = <QWERTY COLEMAK>;
             bindings = <&kp KP_NUM>;
         };
 
@@ -212,7 +211,7 @@
         combo_insert {
             timeout-ms = <50>;
             key-positions = <29 30>;
-            layers = <QWERTY QWERTY_SHIFT_LEFT COLEMAK COLEMAK_SHIFT_LEFT>;
+            layers = <QWERTY COLEMAK>;
             bindings = <&kp INSERT>;
         };
 
@@ -220,7 +219,7 @@
         combo_caps_word {
             timeout-ms = <50>;
             key-positions = <47 48>;
-            layers = <QWERTY QWERTY_SHIFT_LEFT COLEMAK COLEMAK_SHIFT_LEFT>;
+            layers = <QWERTY COLEMAK>;
             bindings = <&caps_word>;
         };
 
@@ -228,7 +227,7 @@
         combo_caps_lock {
             timeout-ms = <50>;
             key-positions = <48 49>;
-            layers = <QWERTY QWERTY_SHIFT_LEFT COLEMAK COLEMAK_SHIFT_LEFT>;
+            layers = <QWERTY COLEMAK>;
             bindings = <&kp CAPS>;
         };
 
@@ -261,26 +260,6 @@
             layers = <MOUSE>;
             bindings = <&mkp MCLK>;
         };
-
-        /* Toggle QWERTY shift left when pressing the keys in the position of C & V on the QWERTY keymap simultaneously (QWERTY layers only) */
-        /*
-        combo_qwerty_shift_left {
-            timeout-ms = <50>;
-            key-positions = <49 50>;
-            layers = <QWERTY QWERTY_SHIFT_LEFT>;
-            bindings = <&tog QWERTY_SHIFT_LEFT>;
-        };
-        */
-
-        /* Toggle COLEMAK shift left when pressing the keys in the position of C & V on the QWERTY keymap simultaneously (COLEMAK layers only) */
-        /*
-        combo_colemak_shift_left {
-            timeout-ms = <50>;
-            key-positions = <49 50>;
-            layers = <COLEMAK COLEMAK_SHIFT_LEFT>;
-            bindings = <&tog COLEMAK_SHIFT_LEFT>;
-        };
-        */
     };
 };
 
@@ -290,24 +269,24 @@
 
         layer_QWERTY {
             bindings = <
-        &kp F1               &kp F2         &kp F3        &kp F4          &kp F5                                                                                                                                                  &kp F6       &kp F7       &kp F8        &kp F9            &kp F10
-        &kp EQUAL            &kp N1         &kp N2        &kp N3          &kp N4          &kp N5                                                                                                                     &kp N6       &kp N7       &kp N8       &kp N9        &kp N0            &kp MINUS
-        &kp TAB              &kp Q          &kp W         &lh LA(TAB) E   &lh LG(TAB) R   &kp T                                                                                                                      &kp Y        &kp U        &kp I        &kp O         &kp P             &kp BSLH
-        &kp ESC              &sh LSHIFT A   &mh LCTRL S   &mh LALT D      &mh LGUI F      &mh LGUI G                                                                                                                 &mh RGUI H   &mh RGUI J   &mh LALT K   &mh RCTRL L   &sh RSHIFT SEMI   &kp SQT
-        &kp GRAVE            &lh LG(Z) Z    &lh LG(X) X   &mh LG(C) C     &lh LG(V) V     &kp B        &kp_tog LSHFT NAV   &kp_tog LCTRL NUMPAD   &kp LGUI       &kp LGUI   &kp RCTRL  &kp_tog RSHFT SYMBOLS         &kp N        &kp M        &kp COMMA    &kp DOT       &kp FSLH          &kp PG_UP
-        &magic MAGIC QWERTY  &kp HOME       &kp END       &kp LEFT        &kp RIGHT                    &lt NAV BSPC        &lt NUMPAD TAB         &kp LALT       &kp RALT   &kp RET    &lt SYMBOLS SPACE                          &kp UP       &kp DOWN     &kp LBKT      &kp RBKT          &kp PG_DN
+        &kp F1               &kp F2         &kp F3        &kp F4          &kp F5                                                                                                                                                                                       &kp F6       &kp F7       &kp F8        &kp F9            &kp F10
+        &kp EQUAL            &kp N1         &kp N2        &kp N3          &kp N4          &kp N5                                                                                                                                                          &kp N6       &kp N7       &kp N8       &kp N9        &kp N0            &kp MINUS
+        &kp TAB              &kp Q          &kp W         &lh LA(TAB) E   &lh LG(TAB) R   &kp T                                                                                                                                                           &kp Y        &kp U        &kp I        &kp O         &kp P             &kp BSLH
+        &kp ESC              &sh LSHIFT A   &mh LCTRL S   &mh LALT D      &mh LGUI F      &mh LGUI G                                                                                                                                                      &mh RGUI H   &mh RGUI J   &mh LALT K   &mh RCTRL L   &sh RSHIFT SEMI   &kp SQT
+        &kp GRAVE            &lh LG(Z) Z    &lh LG(X) X   &mh LG(C) C     &lh LG(V) V     &kp B        &kp_tog LSHFT NAV   &kp_tog LCTRL NUMPAD   &kp LGUI                          &kp LGUI                     &kp RCTRL  &kp_tog RSHFT SYMBOLS         &kp N        &kp M        &kp COMMA    &kp DOT       &kp FSLH          &kp PG_UP
+        &magic MAGIC QWERTY  &kp HOME       &kp END       &kp LEFT        &kp RIGHT                    &lt NAV BSPC        &lt NUMPAD TAB         &kp_tog QWERTY_MIRROR LALT        &kp_tog QWERTY_MIRROR RALT   &kp RET    &lt SYMBOLS SPACE                          &kp UP       &kp DOWN     &kp LBKT      &kp RBKT          &kp PG_DN
             >;
         };
 
-        /* Shift the column to the right of the LHS index finger onto the index finger column to avoid having to stretch */
-        layer_QWERTY_SHIFT_LEFT {
+        /* The above layout mirrored */
+        layer_QWERTY_mirror {
             bindings = <
-        &none   &none    &none    &none    &none                                                                                      &none    &none    &none    &none    &none
-        &none   &trans   &trans   &trans   &qh N5 N4   &trans                                                                &trans   &trans    &trans   &trans   &trans   &none
-        &none   &trans   &trans   &trans   &qh T R     &trans                                                                &trans   &qh Y U   &trans   &trans   &trans   &none
-        &none   &trans   &trans   &trans   &qh G F     &trans                                                                &trans   &qh H J   &trans   &trans   &trans   &none
-        &none   &trans   &trans   &trans   &qh B V     &trans   &trans   &trans   &trans          &trans   &trans   &trans   &trans   &qh N M   &trans   &trans   &trans   &none
-        &none   &none    &none    &none    &none                &trans   &trans   &trans          &trans   &trans   &trans            &none     &none    &none    &none    &none
+        &kp F10     &kp F9            &kp F8        &kp F7        &kp F6                                                                                                                                                                                  &kp F5          &kp F4          &kp F3        &kp F2            &kp F1
+        &kp MINUS   &kp N0            &kp N9        &kp N8        &kp N7          &kp N6                                                                                                                                                     &kp N5       &kp N4          &kp N3          &kp N2        &kp N1            &kp EQUAL
+        &kp BSLH    &kp P             &kp O         &kp I         &kp U           &kp Y                                                                                                                                                      &kp T        &lh LG(TAB) R   &lh LA(TAB) E   &kp W         &kp Q             &kp TAB
+        &kp SQT     &sh RSHIFT SEMI   &mh RCTRL L   &mh LALT K    &mh RGUI J      &mh RGUI H                                                                                                                                                 &mh LGUI G   &mh LGUI F      &mh LALT D      &mh LCTRL S   &sh LSHIFT A      &kp ESC
+        &kp PG_UP   &kp FSLH          &kp DOT       &kp COMMA     &kp M           &kp N       &kp_tog RSHFT SYMBOLS   &kp RCTRL   &kp LGUI                          &kp LGUI                     &kp_tog LCTRL NUMPAD   &kp_tog LSHFT NAV    &kp B        &lh LG(V) V     &mh LG(C) C     &lh LG(X) X   &lh LG(Z) Z       &kp GRAVE
+        &kp PG_DN   &kp RBKT          &kp LBKT      &kp DOWN      &kp UP                      &lt SYMBOLS SPACE       &kp RET     &kp_tog QWERTY_MIRROR RALT        &kp_tog QWERTY_MIRROR LALT   &lt NUMPAD TAB         &lt NAV BSPC                      &kp RIGHT       &kp LEFT        &kp END       &kp HOME          &magic MAGIC QWERTY
             >;
         };
 
@@ -319,18 +298,6 @@
        &kp ESC                &sh LSHIFT A   &mh LCTRL R   &mh LALT S      &mh LGUI T      &mh LGUI G                                                          &mh RGUI M    &mh RGUI N   &mh LALT E   &mh RCTRL I  &sh RSHIFT O   &kp SQT
        &kp GRAVE              &lh LG(Z) Z    &lh LG(X) X   &mh LG(C) C     &lh LG(V) D     &kp V       &trans  &trans  &trans       &trans  &trans  &trans     &kp K         &kp H        &kp COMMA    &kp DOT      &kp FSLH       &kp PG_UP
        &magic MAGIC COLEMAK   &kp HOME       &kp END       &kp LEFT        &kp RIGHT                   &trans  &trans  &trans       &trans  &trans  &trans                   &kp UP       &kp DOWN     &kp LBKT     &kp RBKT       &kp PG_DN
-            >;
-        };
-
-        /* Shift the column to the right of the LHS index finger onto the index finger column to avoid having to stretch */
-        layer_COLEMAK_SHIFT_LEFT {
-            bindings = <
-        &none   &none    &none    &none    &none                                                                                      &none    &none    &none    &none    &none
-        &none   &trans   &trans   &trans   &qh N5 N4   &trans                                                                &trans   &trans    &trans   &trans   &trans   &none
-        &none   &trans   &trans   &trans   &qh B P     &trans                                                                &trans   &qh J L   &trans   &trans   &trans   &none
-        &none   &trans   &trans   &trans   &qh G T     &trans                                                                &trans   &qh M N   &trans   &trans   &trans   &none
-        &none   &trans   &trans   &trans   &qh V D     &trans   &trans   &trans   &trans          &trans   &trans   &trans   &trans   &qh K H   &trans   &trans   &trans   &none
-        &none   &none    &none    &none    &none                &trans   &trans   &trans          &trans   &trans   &trans            &none     &none    &none    &none    &none
             >;
         };
 
