@@ -24,6 +24,7 @@
 #define NUMPAD 5
 #define MOUSE 6
 #define MAGIC 7
+#define AOE 8
 
 #define AS(keycode) &qh LS(keycode) keycode     // Autoshift Macro
 
@@ -187,7 +188,7 @@
         combo_esc {
             timeout-ms = <50>;
             key-positions = <23 24>;
-            layers = <QWERTY COLEMAK MOUSE>;
+            layers = <QWERTY COLEMAK MOUSE AOE>;
             bindings = <&kp ESC>;
         };
 
@@ -259,6 +260,13 @@
             key-positions = <41 42>;
             layers = <MOUSE>;
             bindings = <&mkp MCLK>;
+        };
+
+        /* Toggle the AOE layer when pressing ~ and Z */
+        combo_toggle_aoe {
+            timeout-ms = <50>;
+            key-positions = <46 47>;
+            bindings = <&tog AOE>;
         };
     };
 };
@@ -354,6 +362,17 @@
          &none            &none            &none            &none            &none            &none      &bt_2   &bt_3         &none   &none   &none   &none   &none   &none   &none   &none   &none           &none
          &none            &none            &none            &none            &none                       &bt_0   &bt_1  &out OUT_USB   &none   &none   &none           &none   &none   &none   &none           &to 3
               >;
+        };
+
+        layer_AOE {
+            bindings = <
+        &none        &kp F1                       &kp F2            &kp F3           &kp F4                                                                                 &none   &none   &none   &none   &none
+        &none        &kp N6                       &kp N7            &kp N8           &kp N9    &kp N0                                                               &none   &none   &none   &none   &none   &none
+        &sk LCTRL    &kp N1                       &kp N2            &kp N3           &kp N4    &kp N5                                                               &none   &none   &none   &none   &none   &none
+        &sk LSHIFT   &sh LSHIFT LC(LS(LA(DOT)))   &mh LCTRL LC(A)   &mh LALT SPACE   &kp F5    &mh LC(H) H                                                          &none   &none   &none   &none   &none   &none
+        &sl QWERTY   &mh LC(DOT) DOT              &kp COMMA         &kp LC(TAB)      &kp TAB   LC(LS(R))     &none    &none    &none        &none   &none   &none   &none   &none   &none   &none   &none   &none
+        &none        &kp F5                       &kp F6            &kp F7           &kp F8                  &trans   &none    &none        &none   &none   &none           &none   &none   &none   &none   &none
+            >;
         };
 
     };
