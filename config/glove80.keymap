@@ -375,7 +375,7 @@
         &none        &kp N6                       &kp N7                &kp N8              &kp N9              &kp N0                                                                         &none   &none   &none   &none   &none   &none
         &sk LCTRL    &kp N1                       &kp N2                &kp N3              &kp N4              &kp N5                                                                         &none   &none   &none   &none   &none   &none
         &sk LSHIFT   &sh LSHIFT LC(LS(LA(DOT)))   &mh LCTRL LC(A)       &mh LALT SPACE      &kp F5              &mh LC(H) H                                                                    &none   &none   &none   &none   &none   &none
-        &kp FSLH     &mh LC(DOT) DOT              &kp LC(COMMA) COMMA   &kp LC(TAB)         &kp TAB             &kp LC(LS(R))   &none          &none      &none        &none   &none   &none   &none   &none   &none   &none   &none   &none
+        &kp FSLH     &mh LC(DOT) DOT              &mh LC(COMMA) COMMA   &kp LC(TAB)         &kp TAB             &kp LC(LS(R))   &none          &none      &none        &none   &none   &none   &none   &none   &none   &none   &none   &none
         &kp APOS     &mh LS(LC(F1)) F1            &mh LS(LC(F2)) F2     &mh LS(LC(F3)) F3   &mh LS(LC(F4)) F4                   &sl AOE_GRID   &kp BSPC   &none        &none   &none   &none           &none   &none   &none   &none   &none
             >;
         };
