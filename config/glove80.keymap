@@ -371,12 +371,12 @@
 
         layer_AOE {
             bindings = <
-        &none          &kp F1                       &kp F2            &kp F3           &kp F4                                                                                   &none   &none   &none   &none   &none
-        &none          &kp N6                       &kp N7            &kp N8           &kp N9    &kp N0                                                                 &none   &none   &none   &none   &none   &none
-        &sk LCTRL      &kp N1                       &kp N2            &kp N3           &kp N4    &kp N5                                                                 &none   &none   &none   &none   &none   &none
-        &sk LSHIFT     &sh LSHIFT LC(LS(LA(DOT)))   &mh LCTRL LC(A)   &mh LALT SPACE   &kp F5    &mh LC(H) H                                                            &none   &none   &none   &none   &none   &none
-        &sl AOE_GRID   &mh LC(DOT) DOT              &kp COMMA         &kp LC(TAB)      &kp TAB   &kp LC(LS(R))   &none    &none    &none        &none   &none   &none   &none   &none   &none   &none   &none   &none
-        &none          &kp F5                       &kp F6            &kp F7           &kp F8                    &trans   &none    &none        &none   &none   &none           &none   &none   &none   &none   &none
+        &none        &kp F1                       &kp F2            &kp F3           &kp F4                                                                                           &none   &none   &none   &none   &none
+        &none        &kp N6                       &kp N7            &kp N8           &kp N9    &kp N0                                                                         &none   &none   &none   &none   &none   &none
+        &sk LSHIFT   &kp N1                       &kp N2            &kp N3           &kp N4    &kp N5                                                                         &none   &none   &none   &none   &none   &none
+        &sk LCTRL    &sh LSHIFT LC(LS(LA(DOT)))   &mh LCTRL LC(A)   &mh LALT SPACE   &kp F5    &mh LC(H) H                                                                    &none   &none   &none   &none   &none   &none
+        &none        &mh LC(DOT) DOT              &kp COMMA         &kp LC(TAB)      &kp TAB   &kp LC(LS(R))   &none          &none      &none        &none   &none   &none   &none   &none   &none   &none   &none   &none
+        &none        &kp F5                       &kp F6            &kp F7           &kp F8                    &sl AOE_GRID   &kp BSPC   &none        &none   &none   &none           &none   &none   &none   &none   &none
             >;
         };
 
