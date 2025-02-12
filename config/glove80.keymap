@@ -221,18 +221,18 @@
             bindings = <&kp INSERT>;
         };
 
-        /* Caps word when pressing the keys in the position of Z & X on the QWERTY keymap simultaneously */
+        /* Caps word when pressing the keys in the position of X & C on the QWERTY keymap simultaneously */
         combo_caps_word {
             timeout-ms = <50>;
-            key-positions = <47 48>;
+            key-positions = <48 49>;
             layers = <QWERTY COLEMAK>;
             bindings = <&caps_word>;
         };
 
-        /* Caps lock when pressing the keys in the position of X & C on the QWERTY keymap simultaneously */
+        /* Caps lock when pressing the keys in the position of Z & X on the QWERTY keymap simultaneously */
         combo_caps_lock {
             timeout-ms = <50>;
-            key-positions = <48 49>;
+            key-positions = <47 48>;
             layers = <QWERTY COLEMAK>;
             bindings = <&kp CAPS>;
         };
