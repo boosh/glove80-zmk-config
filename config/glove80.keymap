@@ -278,7 +278,7 @@
         /* Toggle the QWERTY_VANILLA layer when pressing V & A & N */
         combo_toggle_querty_vanilla {
             timeout-ms = <50>;
-            key-positions = <50 35 52>;
+            key-positions = <50 35 58>;
             bindings = <&tog QWERTY_VANILLA>;
         };
     };
